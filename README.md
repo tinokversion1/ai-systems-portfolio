@@ -81,6 +81,61 @@ AI accelerates my engineering process, while system requirements, validation and
 - RAG architectures
 - Scalable cloud infrastructure
 ---
+# Engineering Highlights
+
+A selection of engineering challenges I have worked on while building real systems.
+
+### Transactional Consistency
+
+Designed transactional workflows where multiple operations must remain consistent even under failures, retries or concurrent requests.
+
+**Concepts applied:** database transactions, atomic operations, immutable records and compensating operations.
+
+### Idempotent Systems
+
+Implemented mechanisms designed to prevent repeated requests or external events from producing duplicated operations.
+
+**Concepts applied:** idempotency, unique constraints, external verification and defensive processing.
+
+### State Machines
+
+Built controlled lifecycle transitions for workflows where arbitrary state changes could create inconsistent system behavior.
+
+**Concepts applied:** explicit state transitions, validation and atomic updates.
+
+### External APIs & Webhooks
+
+Integrated backend systems with external providers while accounting for delayed, duplicated or unreliable notifications.
+
+A key principle applied throughout development:
+
+> External notifications are signals. Critical state changes require verification.
+
+### Secure Identity & Authorization
+
+Implemented authentication and authorization mechanisms across different environments, including JWT-based sessions, role-based access and cryptographically verified platform identity.
+
+### Conversational AI Architecture
+
+Built an AI system where the language model operates as one component inside a broader architecture involving:
+
+**Context → State → Rules → LLM → Validation → Response**
+
+This reduces dependence on a single prompt and makes conversational behavior easier to control and evolve.
+
+### Persistent AI Memory
+
+Designed asynchronous memory processing that allows conversational context to persist beyond the immediate model context window while keeping the interactive path lightweight.
+
+### Defensive AI Integration
+
+Implemented structured model outputs and validation mechanisms so malformed or unexpected AI responses do not automatically propagate through the application.
+
+---
+
+These projects have reinforced one principle across my work:
+
+> Reliable systems are not defined by what happens when everything works, but by how they behave when something fails.
 
 # Projects
 
