@@ -1,1 +1,67 @@
 
+# Project 03 — Humanoid Conversational AI
+
+## Overview
+
+Humanoid Conversational AI is an experimental AI system designed to explore more natural, context-aware and emotionally adaptive interactions between humans and language models.
+
+Rather than treating an LLM as a simple question-answering engine, the project explores how multiple software components can work together to regulate conversation, preserve context and produce more coherent interactions over time.
+
+> This case study intentionally presents only the high-level architecture.
+> Internal prompts, behavioral rules, memory algorithms and proprietary orchestration mechanisms remain private.
+
+---
+
+## Current Status
+
+🚧 **Active Development**
+
+The system currently includes:
+
+- Conversational AI orchestration
+- Persistent memory
+- Context management
+- Response validation
+- Conversation-state management
+- Adaptive response behavior
+- Multimodal image processing
+- Background memory processing
+- Failure-recovery mechanisms
+
+---
+
+## Problem
+
+Traditional chatbot interactions often suffer from several limitations:
+
+- Short-term context
+- Repetitive responses
+- Inconsistent conversational behavior
+- Loss of important information between interactions
+- Poor adaptation to conversation dynamics
+- Excessive dependence on a single LLM prompt
+
+This project explores a different approach:
+
+**LLM + Memory + State + Rules + Evaluation**
+
+The language model remains important, but it operates as one component inside a larger conversational system.
+
+---
+
+## High-Level Architecture
+
+```text
+User Input
+    ↓
+Conversation Analysis
+    ↓
+State & Context Management
+    ↓
+AI Orchestration
+    ↓
+LLM
+    ↓
+Response Validation
+    ↓
+Adaptive Response
