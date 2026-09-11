@@ -2,200 +2,145 @@
 
 ## Overview
 
-Telegram AI Platform is a parallel project designed to extend the capabilities of the main AI Core Platform into a conversational and community-based environment.
+A modular content and conversational platform built on top of the Telegram ecosystem.
 
-Instead of treating Telegram simply as a messaging channel, the project explores how it can become an interface to a broader digital ecosystem powered by backend services and AI.
+The project combines a Telegram Bot, Mini App, backend services, secure identity verification and a structured content system.
 
-The project is currently under active development and its source code remains private.
+The system is being developed independently from my main AI Core Platform, with strict architectural boundaries between both environments.
 
----
-
-## Problem
-
-Traditional applications require users to open a dedicated interface to access services.
-
-Messaging platforms provide a different opportunity: bringing services directly into an environment where users already communicate.
-
-The challenge is therefore not simply creating a Telegram bot.
-
-The goal is to design an architecture where Telegram can interact with:
-
-- Backend services
-- AI models
-- User context
-- Community functionality
-- Content systems
-- External APIs
-- The main Core Platform
+> This case study intentionally presents only a high-level architecture.  
+> Security mechanisms, internal data models and proprietary implementation details remain private.
 
 ---
 
-## Architecture
+## Current Development Status
 
-The platform separates the Telegram interface from the underlying application logic.
+**Active Development**
 
-High-level flow:
+- ✅ Bot foundation
+- ✅ Secure Telegram identity
+- ✅ Mini App foundation
+- 🟡 Content architecture implemented and under audit
+- ⬜ Additional product modules planned
 
-**Telegram User → Telegram Bot → Backend → Context / Application Logic → AI Services → Response**
-
-This allows Telegram to operate as one interface of a larger system rather than becoming the system itself.
-
----
-
-## Main Components
-
-### Telegram Interface
-
-Receives user interactions and delivers responses through Telegram.
-
-### Bot Layer
-
-Handles commands, messages and interaction flows.
-
-### Backend Services
-
-Processes application logic independently from Telegram.
-
-This separation makes it possible for the same backend capabilities to eventually serve other interfaces.
-
-### Context Layer
-
-Determines what information should be provided to the AI system before generating a response.
-
-Possible context sources include:
-
-- User information
-- Conversation history
-- Application rules
-- Relevant stored information
-
-### AI Layer
-
-Uses language models to generate or assist with conversational responses.
-
-### Core Integration
-
-The architecture is designed to allow communication between the Telegram environment and the main Core Platform.
-
-This creates the possibility of sharing services and selected information between different interfaces.
+The project is being developed incrementally, with each major phase going through implementation, verification and technical review before being considered complete.
 
 ---
 
-## AI Pipeline
+## High-Level Architecture
 
-A simplified conversational flow can be represented as:
+The system follows this general structure:
 
-**Message → Intent / Context → Application Logic → LLM → Evaluation → Telegram Response**
+**Telegram → Bot / Mini App → Backend Services → Data & Content Services**
 
-The LLM is therefore one component of the pipeline rather than the entire application.
+The Telegram interface is intentionally separated from the main application logic.
 
----
-
-## Community Layer
-
-The project also explores Telegram as a community environment.
-
-Potential capabilities include:
-
-- Community interaction
-- Content distribution
-- Conversational experiences
-- Educational content
-- Interactive activities
-- AI-assisted conversations
-- Connection with external services
+This allows the backend architecture to evolve independently while Telegram remains one of the interfaces through which users interact with the platform.
 
 ---
 
-## Cross-Platform Architecture
+## Technology Stack
 
-One of the main architectural ideas behind the project is separating the interface from the core system.
+### Frontend
+- React
+- TypeScript
+- Vite
+- Telegram Mini Apps
 
-Conceptually:
+### Backend
+- NestJS
+- TypeScript
+- REST APIs
 
-**Web / Mobile / Telegram**
+### Data
+- PostgreSQL
+- Prisma
 
-↓
-
-**Shared Backend Services**
-
-↓
-
-**Data + AI + External Services**
-
-This approach makes it possible to build new interfaces without recreating the entire application logic.
-
----
-
-## AI-Assisted Development
-
-I developed this project using AI tools as engineering copilots throughout the development process.
-
-AI has supported:
-
-- Architecture exploration
-- Code generation
-- Debugging
-- API integration
-- Understanding technical documentation
-- Refactoring
-- Testing hypotheses
-- Iterative development
-
-I remain responsible for defining the system requirements, evaluating proposed implementations, validating behavior and making the final engineering decisions.
+### Cloud Infrastructure
+- Google Cloud
+- Cloud Run
+- Cloud Storage
+- Secret Management
 
 ---
 
-## Engineering Lessons
+## Security Approach
 
-### 1. A bot is an interface, not necessarily the system
+Security has been treated as an architectural requirement rather than a feature added at the end.
 
-Separating Telegram-specific functionality from backend logic creates a more flexible architecture.
+The system incorporates principles such as:
 
-### 2. Context is critical
+- Server-side identity verification
+- Signed authentication data
+- Environment validation
+- Protected secrets
+- Authorization boundaries
+- Anti-duplication controls
+- Controlled content visibility
+- Defensive API behavior
 
-Sending every piece of available information to an LLM is inefficient and can reduce response quality.
-
-The system should determine what information is relevant before calling the model.
-
-### 3. AI and deterministic logic should be separated
-
-Not every decision should be delegated to a language model.
-
-Application rules and predictable operations should remain deterministic whenever possible.
-
-### 4. Multi-platform systems benefit from shared services
-
-When business logic lives outside the interface, multiple clients can reuse the same capabilities.
+Implementation details are intentionally omitted from this public repository.
 
 ---
 
-## Relationship with the Core Platform
+## Engineering Approach
 
-The Telegram project and the AI Core Platform are being developed as separate but complementary systems.
+The project is developed using an iterative engineering process:
 
-The long-term architecture is designed around the idea that multiple interfaces can access shared services while maintaining clear boundaries between components.
+**Design → Implement → Test → Audit → Correct → Verify**
+
+External/adversarial technical review is used to challenge assumptions and identify weaknesses before a phase is considered complete.
+
+AI tools are used throughout development as engineering copilots for implementation, debugging, architecture exploration and technical review.
+
+I remain responsible for system design, requirements, validation and final engineering decisions.
 
 ---
 
-## Current Development Areas
+## Architectural Principles
 
-The project continues evolving around:
+The project follows several principles:
 
-- Telegram integration
-- Conversational flows
-- AI orchestration
-- Context management
-- Backend communication
-- Community functionality
-- Core Platform integration
-- Security
-- Observability
+**Separation of concerns**  
+Interface, backend logic, data and infrastructure remain clearly separated.
+
+**Fail-safe configuration**  
+Invalid or unsafe configurations should prevent the application from starting rather than silently degrading security.
+
+**Server-side trust**  
+Security-sensitive identity and authorization decisions are validated by the backend.
+
+**Incremental architecture**  
+Infrastructure is introduced when justified by actual requirements rather than anticipated complexity.
+
+**Privacy by design**  
+Sensitive implementation and user information are intentionally isolated from public-facing components.
+
+---
+
+## What This Project Demonstrates
+
+This project represents practical experience with:
+
+- Backend architecture
+- API design
+- Authentication flows
+- Telegram platform integration
+- React applications
+- Relational data modeling
+- Cloud deployment
+- Security-oriented development
+- Technical auditing
+- AI-assisted software engineering
 
 ---
 
 ## Repository Status
 
 🔒 Source code: Private  
-🚧 Development status: Active  
-📄 Public documentation: In progress
+🚧 Development: Active  
+✅ TG1–TG3: Completed  
+🟡 TG4: Implemented / Under Audit  
+🗺️ Future phases: Private roadmap
+
+Only high-level architectural information is published here. Proprietary implementation details, security controls and product strategy remain private.
