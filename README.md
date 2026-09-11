@@ -11,7 +11,75 @@ I define the problem, architecture, system behavior and technical requirements, 
 My background in Mechanical Engineering and industrial maintenance strongly influences the way I approach software:
 
 > Understand the complete system, understand how its components interact, identify failure points and then design the solution.
+# About Me
 
+I am a Mechanical Engineer with hands-on experience in industrial maintenance and a growing specialization in software systems and artificial intelligence.
+
+My engineering background taught me to understand complex systems from the inside: how components interact, how failures propagate and how to diagnose problems before proposing solutions.
+
+I now apply that same systems-thinking approach to software development.
+
+I have designed and developed projects involving backend architecture, transactional systems, cloud infrastructure, conversational AI and persistent-memory systems, using AI extensively as an engineering copilot.
+
+I am particularly interested in roles where engineering, software and AI intersect.
+
+---
+
+# Technical Skills
+
+### Hands-on Development
+
+**Backend**
+- NestJS
+- TypeScript
+- Python
+- FastAPI
+- REST APIs
+
+**Data**
+- PostgreSQL
+- TypeORM
+- Prisma
+- Transactional data modeling
+
+**AI Engineering**
+- LLM integration
+- Prompt engineering
+- Context management
+- Persistent memory
+- Structured AI outputs
+- Multimodal AI
+- AI orchestration
+
+**Cloud & Integrations**
+- Google Cloud
+- Cloud Run
+- Cloud SQL
+- Cloud Storage
+- Webhooks
+- External APIs
+
+**Engineering Concepts**
+- Authentication & authorization
+- Idempotency
+- State machines
+- Concurrency control
+- Transactional consistency
+- Defensive API design
+
+### AI-Assisted Engineering
+
+I regularly use AI tools for architecture exploration, implementation, debugging, testing, technical research and code review.
+
+AI accelerates my engineering process, while system requirements, validation and final technical decisions remain under my responsibility.
+
+### Currently Expanding
+
+- Production observability
+- Distributed systems
+- Advanced AI evaluation
+- RAG architectures
+- Scalable cloud infrastructure
 ---
 
 # Projects
