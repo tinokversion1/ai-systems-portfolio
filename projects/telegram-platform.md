@@ -2,145 +2,72 @@
 
 ## Overview
 
-A modular content and conversational platform built on top of the Telegram ecosystem.
+Telegram AI Platform is a modular conversational and content platform built inside the Telegram ecosystem.
 
-The project combines a Telegram Bot, Mini App, backend services, secure identity verification and a structured content system.
+It combines a Telegram Bot, Mini App, backend services, secure identity verification and structured digital content delivery.
 
-The system is being developed independently from my main AI Core Platform, with strict architectural boundaries between both environments.
+The project is developed independently from the main AI Core Platform, with clear architectural boundaries between both systems.
 
-> This case study intentionally presents only a high-level architecture.  
-> Security mechanisms, internal data models and proprietary implementation details remain private.
+> This public case study intentionally presents only a high-level view.
+> Internal security controls, business logic, data models and proprietary implementation details remain private.
 
 ---
 
 ## Current Development Status
 
-**Active Development**
+🚧 **Active Development**
 
-- ✅ Bot foundation
-- ✅ Secure Telegram identity
-- ✅ Mini App foundation
-- 🟡 Content architecture implemented and under audit
-- ⬜ Additional product modules planned
+### Implemented
 
-The project is being developed incrementally, with each major phase going through implementation, verification and technical review before being considered complete.
+- Telegram Bot foundation
+- Secure Telegram identity verification
+- Telegram Mini App
+- Authenticated user sessions
+- Cloud deployment
+- Content catalog architecture
+
+### Under validation
+
+- Content management flows
+- Editorial state handling
+- Content access controls
+- Cloud asset integration
+
+### Planned
+
+Additional product modules are intentionally omitted from this public repository.
+
+---
+
+## Problem
+
+The challenge was not simply creating a Telegram bot.
+
+The goal was to design a platform where Telegram acts as an interface to a larger backend system capable of supporting:
+
+- Secure user identity
+- Conversational interactions
+- Digital content
+- Persistent user context
+- Cloud-hosted assets
+- Controlled access
+- Future AI-assisted experiences
+
+The result is a modular architecture where Telegram remains an interface while application logic stays in the backend.
 
 ---
 
 ## High-Level Architecture
 
-The system follows this general structure:
-
-**Telegram → Bot / Mini App → Backend Services → Data & Content Services**
-
-The Telegram interface is intentionally separated from the main application logic.
-
-This allows the backend architecture to evolve independently while Telegram remains one of the interfaces through which users interact with the platform.
-
----
-
-## Technology Stack
-
-### Frontend
-- React
-- TypeScript
-- Vite
-- Telegram Mini Apps
-
-### Backend
-- NestJS
-- TypeScript
-- REST APIs
-
-### Data
-- PostgreSQL
-- Prisma
-
-### Cloud Infrastructure
-- Google Cloud
-- Cloud Run
-- Cloud Storage
-- Secret Management
-
----
-
-## Security Approach
-
-Security has been treated as an architectural requirement rather than a feature added at the end.
-
-The system incorporates principles such as:
-
-- Server-side identity verification
-- Signed authentication data
-- Environment validation
-- Protected secrets
-- Authorization boundaries
-- Anti-duplication controls
-- Controlled content visibility
-- Defensive API behavior
-
-Implementation details are intentionally omitted from this public repository.
-
----
-
-## Engineering Approach
-
-The project is developed using an iterative engineering process:
-
-**Design → Implement → Test → Audit → Correct → Verify**
-
-External/adversarial technical review is used to challenge assumptions and identify weaknesses before a phase is considered complete.
-
-AI tools are used throughout development as engineering copilots for implementation, debugging, architecture exploration and technical review.
-
-I remain responsible for system design, requirements, validation and final engineering decisions.
-
----
-
-## Architectural Principles
-
-The project follows several principles:
-
-**Separation of concerns**  
-Interface, backend logic, data and infrastructure remain clearly separated.
-
-**Fail-safe configuration**  
-Invalid or unsafe configurations should prevent the application from starting rather than silently degrading security.
-
-**Server-side trust**  
-Security-sensitive identity and authorization decisions are validated by the backend.
-
-**Incremental architecture**  
-Infrastructure is introduced when justified by actual requirements rather than anticipated complexity.
-
-**Privacy by design**  
-Sensitive implementation and user information are intentionally isolated from public-facing components.
-
----
-
-## What This Project Demonstrates
-
-This project represents practical experience with:
-
-- Backend architecture
-- API design
-- Authentication flows
-- Telegram platform integration
-- React applications
-- Relational data modeling
-- Cloud deployment
-- Security-oriented development
-- Technical auditing
-- AI-assisted software engineering
-
----
-
-## Repository Status
-
-🔒 Source code: Private  
-🚧 Development: Active  
-✅ TG1–TG3: Completed  
-🟡 TG4: Implemented / Under Audit  
-🗺️ Future phases: Private roadmap
-
-Only high-level architectural information is published here. Proprietary implementation details, security controls and product strategy remain private.
+```text
+Telegram Users
+      ↓
+Bot / Mini App
+      ↓
+Secure API Layer
+      ↓
+Application Services
+      ↓
+Data & Content Services
+      ↓
+Cloud Infrastructure
